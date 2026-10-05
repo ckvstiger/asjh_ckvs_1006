@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="智光商工 x 安溪國中 115學年度技藝班 D02 第 2 次課程：自拍照片轉 AI Q 版形象 (MyQ.jpg)、100字自我介紹與 Gemini 個人網站生成、Flutter 跨平台專案與 Android Phone APK 封裝實戰。">
+  <title>D02 第 2 次課程：AI Q版頭像 (MyQ.jpg) × Gemini 個人網站 × Flutter Android APK 實戰 | 智光商工 × 安溪國中</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂端快速導航 -->
+  <div class="lesson-nav">
+    <div class="container lesson-nav-inner">
+      <ul class="breadcrumb-list">
+        <li><a href="../index.html">🏫 技藝班主首頁</a></li>
+        <li><a href="../index.html#schedule-section">課程進度表</a></li>
+        <li style="font-weight:700; color:var(--primary-color);">D02 第 2 次課程</li>
+      </ul>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <a href="../D01/index.html" class="btn-secondary" style="padding:4px 12px; font-size:0.82rem;">← 上一週 (D01)</a>
+        <a href="../index.html" class="btn-secondary" style="padding:4px 12px; font-size:0.82rem;">班網首頁</a>
+        <a href="../D03/index.html" class="btn-primary" style="padding:4px 12px; font-size:0.82rem;">前往 D03 ➔</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 課程主題橫幅 -->
+  <header class="lesson-header-banner">
+    <div class="container lesson-title-area">
+      <div class="lesson-subtitle">
+        <span class="lesson-badge">第 2 次上課 • 9月22日 (二)</span>
+        <span class="lesson-badge-flutter">Flutter Mobile</span>
+        <span class="lesson-badge-android">Android APK</span>
+        <span>任課老師：翁偉倬 老師（協同：周櫻 老師）</span>
+        <span>上課地點：夢想家電腦教室</span>
+        <span>時間：08:15 ~ 11:20</span>
+      </div>
+      <h1>D02 商業與管理職群：AI Q版人像生成 (MyQ.jpg) × Gemini 個人網站 × Flutter Android APK 封裝實戰</h1>
+    </div>
+  </header>
+
+  <!-- 快速週次選單列 -->
+  <div class="week-switcher-bar">
+    <div class="container week-switcher-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-weight:600; font-size:0.9rem; color:var(--text-muted);">快速切換週次：</span>
+        <select id="weekSelect" class="week-select-dropdown" onchange="if(this.value) location.href=this.value;">
+          <option value="../D01/index.html">D01 (9/15) 翁偉倬老師 - 商管宣導/資處特色/指法/Antigravity</option>
+          <option value="../D02/index.html" selected>D02 (9/22) 翁偉倬老師 - AI Q版/Gemini建站/Flutter APK</option>
+          <option value="../D03/index.html">D03 (9/29) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D04/index.html">D04 (10/6) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D05/index.html">D05 (10/20) 周櫻老師 - 夢想家電腦教室</option>
+          <option value="../D06/index.html">D06 (10/27) 周櫻老師 - 4樓419教室 (新生戰鬥營)</option>
+          <option value="../D07/index.html">D07 (11/3) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D08/index.html">D08 (11/10) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D09/index.html">D09 (11/17) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D10/index.html">D10 (11/24) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D11/index.html">D11 (12/8) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D12/index.html">D12 (12/15) 翁偉倬老師 - 夢想家電腦教室 (三年級畢旅)</option>
+          <option value="../D13/index.html">D13 (12/22) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D14/index.html">D14 (12/29) 翁偉倬老師 - 夢想家電腦教室</option>
+          <option value="../D15/index.html">D15 (1/5) 周櫻老師 - 4樓419教室</option>
+          <option value="../D16/index.html">D16 (1/12) 翁偉倬老師 - 夢想家電腦教室 (期末成果發表)</option>
+        </select>
+      </div>
+      <div style="font-size:0.86rem; color:var(--text-muted);">
+        💡 今日目標：完成三項個人數位資產（Q版頭像、個人網站、Android APK）
+      </div>
+    </div>
+  </div>
+
+  <!-- 主題分頁錨點列 (Sticky) -->
+  <div class="topic-tabs-bar">
+    <div class="container">
+      <ul class="topic-tabs-list">
+        <li class="topic-tab-item"><a href="#avatar-section" class="topic-tab-link active">1.1 📸 自拍照與 AI Q 版生成 (MyQ.jpg)</a></li>
+        <li class="topic-tab-item"><a href="#gemini-section" class="topic-tab-link">1.2 📝 100字自介與 Gemini 個人網站</a></li>
+        <li class="topic-tab-item"><a href="#flutter-section" class="topic-tab-link">1.3 📱 Flutter 專案與 Android APK 封裝</a></li>
+        <li class="topic-tab-item"><a href="#simulator-section" class="topic-tab-link">1.4 🧪 學生實作工作台 (雙模模擬器)</a></li>
+        <li class="topic-tab-item"><a href="#checklist-section" class="topic-tab-link">1.5 ✅ 任務檢核與資源下載</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 課程主體內容 -->
+  <main class="lesson-content-wrap">
+    <div class="container">
+
+      <!-- ===================================================================
+           1.1 自拍相片與 AI Q 版形象生成 (MyQ.jpg)
+           =================================================================== -->
+      <section class="topic-section" id="avatar-section">
+        <div class="topic-header">
+          <div class="topic-title-group">
+            <h2><span>📸 1.1</span> 自拍相片與 AI 生成 Q 版虛擬人像（檔名規範：MyQ.jpg）</h2>
+            <p>掌握影像生成 AI 與 Prompt 提示詞工程，打造屬於自己的超萌個人品牌標誌</p>
+          </div>
+          <span class="lesson-badge">個人品牌第一步</span>
+        </div>
+
+        <!-- 流程展示圖 -->
+        <div class="demo-banner-box">
+          <img src="images/selfie_to_q_demo.jpg" alt="自拍照片轉換為 AI Q 版頭像流程示意圖" id="imgSelfieDemo">
+          <div class="demo-caption">▲ 真人自拍照 (Real Selfie) 透過 AI 提示詞轉換為超可愛 3D 動漫 Q 版頭像，並儲存為 <code>MyQ.jpg</code></div>
+        </div>
+
+        <!-- 4 步驟詳細教學 -->
+        <div class="feature-grid-3">
+          <div class="feature-step-card">
+            <span class="step-badge-num">1</span>
+            <h3>自拍一張清晰照片</h3>
+            <p>在電腦教室以自然光或日光燈自拍，確保<strong>面部五官清晰、表情開朗自信</strong>。避免光線過暗或嚴重晃動，做為 AI 生成特徵提取的基礎。</p>
+          </div>
+          <div class="feature-step-card">
+            <span class="step-badge-num">2</span>
+            <h3>Prompt 提示詞詠唱</h3>
+            <p>將個人特徵（髮型、眼鏡、燦爛笑容、學校校服顏色）輸入至 AI 繪圖模型（如 Gemini、Midjourney、Bing Image Creator 等），指定 <strong>Chibi 3D Pop 黏土潮玩風格</strong>。</p>
+          </div>
+          <div class="feature-step-card">
+            <span class="step-badge-num">3</span>
+            <h3>命名規範：MyQ.jpg</h3>
+            <p>選定最滿意的成果，下載並重新命名為 <strong style="color:var(--d02-blue); font-size:1rem;">MyQ.jpg</strong>。此檔名為後續<strong>網頁引用與 Flutter App 打包的統一標準</strong>，大小寫務必一致！</p>
+          </div>
+        </div>
+
+        <!-- 互動小工具：AI Q版提示詞組合器 -->
+        <div class="interactive-tool-box">
+          <h4 style="color:#166534; font-size:1.1rem; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+            <span>🎨</span> AI Q版生圖提示詞（Prompt）客製產生器
+          </h4>
+          <p style="font-size:0.88rem; color:#15803d; margin-bottom:16px;">
+            勾選你的個人外貌特徵與偏好風格，系統將即時為你組合出專屬生圖 Prompt，直接複製即可貼至 AI 生圖軟體！
+          </p>
+
+          <div class="tool-control-grid">
+            <div class="control-field">
+              <label for="avatarGender">身份角色：</label>
+              <select id="avatarGender">
+                <option value="cheerful girl">陽光女同學 (Cheerful Girl)</option>
+                <option value="energetic boy">活力男同學 (Energetic Boy)</option>
+                <option value="cool teenager">酷炫文青學生 (Cool Teenager)</option>
+              </select>
+            </div>
+            <div class="control-field">
+              <label for="avatarStyle">藝術畫風：</label>
+              <select id="avatarStyle">
+                <option value="Pixar 3D cute figurine, smooth clay render">3D皮克斯精緻黏土 (3D Pixar / Pop Mart)</option>
+                <option value="Makoto Shinkai anime aesthetic, sparkling light">新海誠日系清新動漫 (Anime Aesthetic)</option>
+                <option value="cyberpunk futuristic chibi neon style">賽博龐克微光潮酷 (Cyberpunk Chibi)</option>
+              </select>
+            </div>
+            <div class="control-field">
+              <label for="avatarHair">髮型特徵：</label>
+              <select id="avatarHair">
+                <option value="bob cut with soft bangs">柔順短髮齊瀏海</option>
+                <option value="neat short hair with parted bangs">俐落陽光清爽短髮</option>
+                <option value="twin tails with pink hair clips">可愛雙馬尾配粉色髮夾</option>
+                <option value="curly fluffy hair">蓬鬆微捲髮</option>
+              </select>
+            </div>
+            <div class="control-field">
+              <label for="avatarGlasses">眼鏡配件：</label>
+              <select id="avatarGlasses">
+                <option value="stylish round wire glasses">戴時尚細黑框圓眼鏡</option>
+                <option value="without glasses, clear shining eyes">不戴眼鏡（清澈閃亮大眼睛）</option>
+              </select>
+            </div>
+            <div class="control-field">
+              <label for="avatarMood">神態表情：</label>
+              <select id="avatarMood">
+                <option value="smiling warmly with sparkling eyes">溫暖燦笑與星星眼</option>
+                <option value="curious confident wink">好奇自信眨眼微笑</option>
+                <option value="focused studious expression">認真專注好學神情</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="code-display-block">
+            <div class="code-header-bar">
+              <span>PROMPT OUTPUT (用於 Midjourney / Bing / Gemini)</span>
+              <button type="button" class="btn-copy-code" id="btnCopyAvatarPrompt">📋 複製提示詞</button>
+            </div>
+            <pre class="code-pre-area" id="avatarPromptResult"></pre>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================================
+           1.2 100 字自我介紹與 Google Gemini 個人網站生成
+           =================================================================== -->
+      <section class="topic-section" id="gemini-section">
+        <div class="topic-header">
+          <div class="topic-title-group">
+            <h2><span>📝 1.2</span> 輸入 100 字自我介紹與 Google Gemini 個人網站生成</h2>
+            <p>透過精準的自然語言文字描述，驅動 Gemini AI 編程專家為你撰寫完整的響應式個人官網</p>
+          </div>
+          <span class="lesson-badge">對話式 AI 網頁生成</span>
+        </div>
+
+        <!-- 100 字自介指導引導 -->
+        <div class="prompt-engineer-box">
+          <h4><span>💡</span> 翁老師的「100 字自我介紹」黃金結構指南：</h4>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; font-size:0.9rem; color:#78350f;">
+            <div><strong>① 我是誰（約20字）：</strong>國中學校、年級、姓名或活力綽號。</div>
+            <div><strong>② 我的熱情與專長（約45字）：</strong>喜歡的科目、電腦技能、電競或美編興趣。</div>
+            <div><strong>③ 技藝班期許與未來（約35字）：</strong>在智光資處科想學到的技能（如考證照、寫App、做網頁）。</div>
+          </div>
+        </div>
+
+        <!-- 即時 100 字打字計數器模組 -->
+        <div class="bio-counter-wrap">
+          <div class="bio-counter-header">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="color:var(--primary-dark); font-size:1.05rem;">✍️ 同學自我介紹草稿編輯區</strong>
+              <span id="bioCountStatus" style="font-size:0.85rem; color:#0369a1; font-weight:600;"></span>
+            </div>
+            <div class="bio-counter-badge">
+              目前字數：<span id="bioWordCount">0</span> / 100 字
+            </div>
+          </div>
+
+          <div class="bio-progress-bar">
+            <div class="bio-progress-fill" id="bioProgressFill"></div>
+          </div>
+
+          <textarea 
+            id="studentBioInput" 
+            class="bio-textarea" 
+            placeholder="請在此輸入約 100 字的個人自介。例如：我是新北市立安溪國中九年級的陳小溪！每週二最期待到智光商工夢想家電腦教室上技藝班。我對電腦軟體、AI生圖與網頁設計非常有熱忱，希望能透過科技創造有趣的專案，未來也想考取電腦軟體應用證照！">我是新北市立安溪國中九年級的陳小溪！每週二最期待到智光商工夢想家電腦教室上技藝班。我對電腦軟體、AI生圖與網頁設計非常有熱忱，希望能透過科技創造有趣的專案，未來也想考取電腦軟體應用證照！</textarea>
+        </div>
+
+        <!-- Gemini 提示詞工程解析 -->
+        <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:24px 0 10px;">🤖 向 Google Gemini 下達的個人網站建置 Prompt</h3>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:12px;">
+          只需點擊複製下方 Prompt，到 <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" style="color:var(--d02-blue); font-weight:700;">Google Gemini ↗</a> 貼上發送，AI 便會依照規範為你產出嵌入 <code>MyQ.jpg</code> 的精美單一 HTML 網頁！
+        </p>
+
+        <div class="code-display-block">
+          <div class="code-header-bar">
+            <span>GEMINI PROMPT TEMPLATE (點擊按鈕自動整合你的姓名與自介)</span>
+            <button type="button" class="btn-copy-code" id="btnCopyGeminiPrompt">📋 複製 Gemini 提示詞</button>
+          </div>
+          <pre class="code-pre-area" id="geminiPromptDisplay">你好 Gemini！我是新北市立安溪國中參加智光商工技藝班（商管職群）的學生。
+請你扮演資深前端網頁工程師，為我撰寫一份完整的、高品質的個人自我介紹單一網頁（包含 index.html 與現代化內嵌 CSS / JavaScript）。
+
+【網頁規格與內容要求】：
+1. 學生姓名：陳小溪
+2. 個人大頭照規定：必須使用相對路徑引用我的 AI Q版頭像 &lt;img src="MyQ.jpg" alt="陳小溪的Q版頭像"&gt;，並設計成圓形頭像帶有微光暈特效。
+3. 個人自我介紹（約100字）：
+"我是新北市立安溪國中九年級的陳小溪！每週二最期待到智光商工夢想家電腦教室上技藝班。我對電腦軟體、AI生圖與網頁設計非常有熱忱，希望能透過科技創造有趣的專案，未來也想考取電腦軟體應用證照！"
+4. 技能標籤庫：包含 [AI生圖, 網頁設計, Flutter App, 盲打指法]，請用精美膠囊標籤呈現。
+5. 設計風格：採用 2026 年現代高質感設計風格，使用 Google Fonts (Noto Sans TC)，搭配漸層背景、毛玻璃卡片、微動畫 hover 特效、以及手機響應式佈局。
+6. 請直接輸出完整可執行的單一 HTML 代碼，方便我儲存並在瀏覽器直接打開。感謝你！</pre>
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================================
+           1.3 根據網站內容生成 Flutter APP 與 Android APK 檔
+           =================================================================== -->
+      <section class="topic-section" id="flutter-section">
+        <div class="topic-header">
+          <div class="topic-title-group">
+            <h2><span>📱 1.3</span> 網站化身手機 App：Flutter 跨平台專案與 Android APK 封裝</h2>
+            <p>從前端 Web 跨界前進行動開發！透過 Google Flutter 框架打包成 Android 手機安裝包（.apk）</p>
+          </div>
+          <span class="lesson-badge-flutter">Google Flutter × Dart</span>
+        </div>
+
+        <!-- 流程展示圖 -->
+        <div class="demo-banner-box">
+          <img src="images/web_to_flutter_apk.jpg" alt="Web 網站轉為 Flutter Android APK 流程圖" id="imgFlutterDemo">
+          <div class="demo-caption">▲ 個人網頁 (HTML/CSS) 透過 Flutter 框架進行行動端封裝，編譯生成可安裝於 Android 手機的 <code>student_profile.apk</code></div>
+        </div>
+
+        <div class="feature-grid-3">
+          <div class="feature-step-card">
+            <span class="step-badge-num">1</span>
+            <h3>跨平台思維 (Cross-Platform)</h3>
+            <p>Flutter 是由 Google 開發的開源 UI 工具包，讓開發者只需撰寫一份 Dart 代碼，就能同時編譯出 <strong>Android、iOS、Web、Windows</strong> 四大平台的原生應用程式！</p>
+          </div>
+          <div class="feature-step-card">
+            <span class="step-badge-num">2</span>
+            <h3>封裝方式與架構</h3>
+            <p><strong>A. 網頁容器封裝 (WebView)：</strong>透過 <code>webview_flutter</code> 套件直接在 App 內瀏覽載入個人網頁。<br><strong>B. 原生 Widget 重構：</strong>使用 <code>CircleAvatar</code> 讀取 <code>assets/MyQ.jpg</code>，搭配 <code>Card</code> 與 <code>Text</code> 排版。</p>
+          </div>
+          <div class="feature-step-card">
+            <span class="step-badge-num">3</span>
+            <h3>打包產出 .APK 檔</h3>
+            <p>執行命令 <code>flutter build apk --release</code>，編譯引擎自動將 Dart 程式與素材打造成 Android 安裝包（APK），學生可直接用手機掃描或傳輸安裝！</p>
+          </div>
+        </div>
+
+        <!-- Flutter 核心實作代碼範例 -->
+        <h3 style="font-size:1.15rem; color:var(--primary-dark); margin:24px 0 10px;">💻 Flutter 專案設定與 main.dart 代碼示範</h3>
+
+        <div class="code-display-block">
+          <div class="code-header-bar">
+            <span>pubspec.yaml (資源引入設定)</span>
+          </div>
+          <pre class="code-pre-area">flutter:
+  uses-material-design: true
+  assets:
+    - assets/MyQ.jpg   # 👈 智光課堂規範：將生圖獲得的 Q 版頭像放入 assets 資料夾</pre>
+        </div>
+
+        <div class="code-display-block">
+          <div class="code-header-bar">
+            <span>lib/main.dart (Flutter 學生個人簡介 App 核心代碼)</span>
+            <button type="button" class="btn-copy-code" id="btnCopyFlutterDart">📋 複製 main.dart</button>
+          </div>
+          <pre class="code-pre-area">import 'package:flutter/material.dart';
+
+void main() => runApp(const StudentApp());
+
+class StudentApp extends StatelessWidget {
+  const StudentApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF02569B)), useMaterial3: true),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('陳小溪的個人 App', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          backgroundColor: const Color(0xFF02569B),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                const CircleAvatar(radius: 60, backgroundImage: AssetImage('assets/MyQ.jpg')),
+                const SizedBox(height: 14),
+                const Text('陳小溪', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFF07345D))),
+                const Chip(label: Text('安溪國中 • 智光資處技藝班')),
+                const SizedBox(height: 14),
+                Card(
+                  elevation: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text('我是安溪國中九年級的陳小溪！每週二最期待到智光商工夢想家電腦教室上技藝班。', style: TextStyle(fontSize: 15, height: 1.6)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}</pre>
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================================
+           1.4 學生課堂整合工作台（雙模即時預覽沙盒）
+           =================================================================== -->
+      <section class="topic-section" id="simulator-section">
+        <div class="topic-header">
+          <div class="topic-title-group">
+            <h2><span>🧪 1.4</span> 學生課堂整合工作台：雙模即時預覽沙盒 (Web vs Flutter Phone)</h2>
+            <p>即時連動你的姓名、頭像與 100 字自介，一鍵在「網頁模式」與「Flutter Android 手機模式」間切換驗證！</p>
+          </div>
+          <span class="lesson-badge">全功能實作模擬器</span>
+        </div>
+
+        <div class="simulator-section">
+          <div class="simulator-layout">
+            
+            <!-- 控制設定面板 -->
+            <div class="sim-controls-panel">
+              <h4><span>⚙️</span> 個人數位名片參數設定</h4>
+
+              <div class="sim-form-group">
+                <label for="simInputName">你的姓名 / 暱稱：</label>
+                <input type="text" id="simInputName" value="陳小溪" placeholder="例如：林大安、陳小溪">
+              </div>
+
+              <div class="sim-form-group">
+                <label for="simInputTitle">身份稱號 / 班級：</label>
+                <input type="text" id="simInputTitle" value="安溪國中 9年級 • 智光資處技藝班學員" placeholder="身份標籤">
+              </div>
+
+              <div class="sim-form-group">
+                <label>Q 版頭像（MyQ.jpg 規範）：</label>
+                <div class="avatar-picker-row">
+                  <img src="MyQ.jpg" alt="Q版頭像預覽" class="avatar-preview-circle" id="simAvatarPreview">
+                  <div>
+                    <select id="simAvatarSelect" style="margin-bottom:6px;">
+                      <option value="MyQ.jpg">預設生圖成果 (MyQ.jpg)</option>
+                    </select>
+                    <div class="avatar-badge-status">✓ 規範檔名：MyQ.jpg</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim-form-group">
+                <label for="simInputSkills">專長與興趣標籤（以逗號分開）：</label>
+                <input type="text" id="simInputSkills" value="AI生圖, 網頁設計, Flutter App, 盲打指法, 商業簡報">
+              </div>
+
+              <div class="sim-form-group">
+                <label for="simInputTheme">界面風格配色：</label>
+                <select id="simInputTheme">
+                  <option value="blue">智光安溪湛藍 (Chih-Kwang Navy Blue)</option>
+                  <option value="flutter">Flutter 經典青空藍 (Flutter Cyan)</option>
+                  <option value="android">Android 科技躍動綠 (Android Green)</option>
+                </select>
+              </div>
+
+              <div class="action-buttons-grid">
+                <button type="button" class="btn-action-primary" id="btnDownloadWebHtml">
+                  <span>📥 下載個人網站 (HTML)</span>
+                </button>
+                <button type="button" class="btn-action-android" id="btnSimulateApk">
+                  <span>🚀 模擬編譯 Android APK</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 右側預覽視窗 -->
+            <div class="sim-preview-panel">
+              
+              <!-- 模式切換按鈕 -->
+              <div class="mode-toggle-group" style="width:100%;">
+                <button type="button" class="mode-toggle-btn active" id="btnModeWeb">
+                  <span>💻 個人網站模式 (Web)</span>
+                </button>
+                <button type="button" class="mode-toggle-btn" id="btnModeFlutter">
+                  <span>📱 Flutter 手機模式 (Android)</span>
+                </button>
+              </div>
+
+              <!-- 預覽 A：Web 瀏覽器模式 -->
+              <div class="web-browser-mockup" id="simWebContainer">
+                <div class="browser-top-bar">
+                  <div class="browser-dots">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address-bar">
+                    https://asjhckvs.ntpc.edu.tw/students/MyQ_profile.html
+                  </div>
+                </div>
+                <div class="browser-page-body">
+                  <div class="student-card-inner">
+                    <img src="MyQ.jpg" alt="學生頭像" class="student-avatar-img" id="webStudentAvatar">
+                    <h4 class="student-name-text" id="webStudentName">陳小溪</h4>
+                    <span class="student-school-tag" id="webStudentSchool">安溪國中 9年級 • 智光資處技藝班學員</span>
+                    <div class="student-bio-text" id="webStudentBio">
+                      我是新北市立安溪國中九年級的陳小溪！每週二最期待到智光商工夢想家電腦教室上技藝班。我對電腦軟體、AI生圖與網頁設計非常有熱忱，希望能透過科技創造有趣的專案，未來也想考取電腦軟體應用證照！
+                    </div>
+                    <div class="student-skills-row" id="webStudentSkills">
+                      <span class="skill-tag">✨ AI生圖</span>
+                      <span class="skill-tag">✨ 網頁設計</span>
+                      <span class="skill-tag">✨ Flutter App</span>
+                      <span class="skill-tag">✨ 盲打指法</span>
+                    </div>
+                    <div style="font-size:0.75rem; color:#94a3b8;">
+                      由 Google Gemini AI 輔助生成 • 智光商工資料處理科指導
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 預覽 B：Flutter Android Phone 擬真手機外框 -->
+              <div class="phone-mockup" id="simFlutterContainer" style="display:none;">
+                <div class="phone-camera-hole"></div>
+                <div class="phone-status-bar">
+                  <span>09:22</span>
+                  <span>📶 5G  🔋 98%</span>
+                </div>
+                <div class="flutter-app-bar">
+                  <span style="font-size:1.1rem;">☰</span>
+                  <h5 id="flutterAppBarTitle">陳小溪 的個人 App</h5>
+                  <span style="font-size:1.1rem;">⋮</span>
+                </div>
+                <div class="phone-screen-content">
+                  <div class="student-card-inner">
+                    <img src="MyQ.jpg" alt="學生頭像" class="student-avatar-img" id="flutterStudentAvatar">
+                    <h4 class="student-name-text" id="flutterStudentName">陳小溪</h4>
+                    <span class="student-school-tag" id="flutterStudentSchool">安溪國中 9年級 • 技藝班</span>
+                    <div class="student-bio-text" id="flutterStudentBio">
+                      我是新北市立安溪國中九年級的陳小溪！每週二最期待到智光商工夢想家電腦教室上技藝班。
+                    </div>
+                    <div class="student-skills-row" id="flutterStudentSkills">
+                      <span class="skill-tag">📱 Flutter</span>
+                      <span class="skill-tag">📱 Android</span>
+                    </div>
+                    <button type="button" class="btn-action-android" style="width:100%; margin-top:8px; font-size:0.8rem; padding:8px;" onclick="showToast('🎉 已觸發 Android 原生按鈕事件！');">
+                      點擊發送問候 (SnackBar)
+                    </button>
+                  </div>
+                  <!-- Flutter FAB 浮動按鈕 -->
+                  <div class="flutter-fab" id="flutterFab" title="Flutter FloatingActionButton">
+                    <span>❤️</span>
+                  </div>
+                </div>
+                <div class="phone-bottom-nav">
+                  <div class="phone-home-pill"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================================
+           1.5 學習任務檢核與資源下載區
+           =================================================================== -->
+      <section class="topic-section" id="checklist-section">
+        <div class="topic-header">
+          <div class="topic-title-group">
+            <h2><span>✅ 1.5</span> 課堂實作檢核表與講義下載</h2>
+            <p>請逐項核對今天的學習成就，打勾後系統會自動記憶你的進度！</p>
+          </div>
+          <span class="lesson-badge">實作評量</span>
+        </div>
+
+        <!-- 任務檢核清單 -->
+        <div class="task-checklist-box">
+          <h3 style="font-size:1.1rem; color:var(--primary-dark); margin-bottom:14px;">📋 D02 課堂四大關卡檢核</h3>
+          
+          <div class="checklist-item">
+            <input type="checkbox" id="chk1">
+            <label for="chk1" class="checklist-label">
+              <strong>關卡一：AI Q 版形象生成（MyQ.jpg）</strong><br>
+              已自拍一張清晰面部相片，並透過 AI 工具成功生成 Q 版虛擬人像，並嚴格將檔案命名存為 <code>MyQ.jpg</code>。
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="chk2">
+            <label for="chk2" class="checklist-label">
+              <strong>關卡二：100 字自我介紹撰寫與修飾</strong><br>
+              包含學校、姓名、個人特質與對資處科學習之熱忱，字數達到 90~115 字的標準區間。
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="chk3">
+            <label for="chk3" class="checklist-label">
+              <strong>關卡三：向 Google Gemini 詠唱建置個人響應式網站</strong><br>
+              使用提示詞模板向 Gemini 生成單一 HTML 網頁代碼，於瀏覽器中能正常顯示 <code>MyQ.jpg</code> 頭像與精美排版。
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="chk4">
+            <label for="chk4" class="checklist-label">
+              <strong>關卡四：Flutter 專案建立與 Android APK 檔封裝</strong><br>
+              理解 Flutter 跨平台原理，將 <code>MyQ.jpg</code> 納入專案資源，並順利產出 Android 手機專屬安裝包 <code>.apk</code>。
+            </label>
+          </div>
+        </div>
+
+        <!-- 講義與範例檔案下載區 -->
+        <h3 style="font-size:1.1rem; color:var(--primary-dark); margin:28px 0 12px;">📁 課堂講義與實作素材包下載</h3>
+        <div class="resource-download-grid">
+          <div class="resource-download-card">
+            <div style="font-size:2rem; margin-bottom:6px;">📘</div>
+            <strong style="font-size:0.95rem; color:var(--d02-primary);">D02 實作講義手冊.pdf</strong>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin:4px 0 12px;">包含 AI 提示詞指引與 Flutter 指令速查表</p>
+            <a href="MyQ.jpg" download="D02_教學參考_MyQ.jpg" class="btn-secondary" style="font-size:0.8rem; padding:6px 14px;">下載參考素材</a>
+          </div>
+
+          <div class="resource-download-card">
+            <div style="font-size:2rem; margin-bottom:6px;">📦</div>
+            <strong style="font-size:0.95rem; color:var(--d02-primary);">Flutter 專案模板代碼包.zip</strong>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin:4px 0 12px;">包含已預設 pubspec.yaml 與 main.dart 框架</p>
+            <button type="button" class="btn-secondary" style="font-size:0.8rem; padding:6px 14px;" onclick="showToast('📦 Flutter 專案代碼可直接從 1.3 單元一鍵複製！');">一鍵複製代碼</button>
+          </div>
+
+          <div class="resource-download-card">
+            <div style="font-size:2rem; margin-bottom:6px;">🤖</div>
+            <strong style="font-size:0.95rem; color:var(--d02-primary);">範例 APK 安裝檔 (Demo)</strong>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin:4px 0 12px;">已編譯完成之 Android 測試安裝包</p>
+            <button type="button" class="btn-primary" style="font-size:0.8rem; padding:6px 14px;" onclick="simulateApkBuild();">下載範例 APK</button>
+          </div>
+        </div>
+
+        <!-- 集合與安全叮嚀 -->
+        <div style="margin-top:28px; background:#fefce8; border:1px solid #fde047; border-radius:12px; padding:18px 22px;">
+          <h4 style="color:#854d0e; margin-bottom:8px; font-size:1rem; display:flex; align-items:center; gap:8px;">
+            <span>🔔</span> 翁偉倬老師 & 周櫻老師 課堂叮嚀
+          </h4>
+          <ul style="font-size:0.9rem; color:#713f12; padding-left:20px; line-height:1.6;">
+            <li><strong>上課準時：</strong>請全體安溪國中同學於 08:05 前抵達智光商工「夢想家電腦教室」，提前開機並就座。</li>
+            <li><strong>檔案備份：</strong>下課前請務必將個人的 <code>MyQ.jpg</code>、個人網頁 <code>index.html</code> 與 APK 檔案存至個人隨身碟或 Google 雲端硬碟。</li>
+            <li><strong>安全帶隊：</strong>課程於 11:20 準時下課，由任課老師親自帶隊返回校門口，維護交通路程安全。</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- 底部週次切換與回顧 -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:40px; padding:20px; background:white; border-radius:12px; border:1px solid var(--border-color); flex-wrap:wrap; gap:12px;">
+        <a href="../D01/index.html" class="btn-secondary">
+          <span>← 上一週 (D01 商管導覽/打字指法)</span>
+        </a>
+        <div style="text-align:center; font-size:0.9rem; color:var(--text-muted);">
+          <span>第 2 次課程完畢 • 下次上課：9/29 (二) 夢想家電腦教室</span>
+        </div>
+        <a href="../D03/index.html" class="btn-primary">
+          <span>前進 D03 第 3 次課程 ➔</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 頁尾 Footer -->
+  <footer class="main-footer">
+    <div class="container footer-bottom" style="border:none; padding-top:0;">
+      <p>© 115學年度 智光商工資料處理科 × 安溪國中技藝班 | 任課老師：翁偉倬 老師、周櫻 老師 | 夢想家電腦教室</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
